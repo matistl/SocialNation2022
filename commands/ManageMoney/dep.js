@@ -19,7 +19,7 @@ module.exports = {
 
 			SendEmbed('DEPOSITADO', `Depositaste ${client.data.emotes.Money} **$${parseInt(EconomyGet.monedero).toLocaleString()}**\nal banco.`, message);
 
-			EconomyGet.banco += parseInt(EconomyGet.banco);
+			EconomyGet.banco += EconomyGet.monedero;
 			EconomyGet.monedero = 0;
 
 			return await EconomyGet.save();

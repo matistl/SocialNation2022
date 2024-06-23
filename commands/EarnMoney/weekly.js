@@ -11,7 +11,7 @@ module.exports = {
 	run: async (client, message, args) => {
 
 
-		let Ganancia = 10000;
+		let Ganancia = 35000;
 
 		let EconomyGet = await ModelEconomy.findOne({ guild: message.guild.id, user: message.author.id });
 

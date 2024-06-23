@@ -161,48 +161,48 @@ module.exports = async (client, interaction) => {
 
 		let ArrayDinero = [
 
-			`**▸ 📆┇ =weekly**`,
-			`**▸ 🕙┇ =daily**`,
-			`**▸ 🧑‍🏭┇ =work**`,
-			`**▸ 🎰┇ =slots**`,
-			`**▸ 🌀┇ =ruleta**`,
-			`**▸ 🤓┇ =memory**`,
-			`**▸ ✊┇ =rob**`,
-			`**▸ ${client.data.emotes.Money}┇ =coin**`,
-			`**▸ 🐟┇ =fish**`
+			`**▸ 📆┇ ${client.data.prefix}weekly**`,
+			`**▸ 🕙┇ ${client.data.prefix}daily**`,
+			`**▸ 🧑‍🏭┇ ${client.data.prefix}work**`,
+			`**▸ 🎰┇ ${client.data.prefix}slots**`,
+			`**▸ 🌀┇ ${client.data.prefix}ruleta**`,
+			`**▸ 🤓┇ ${client.data.prefix}memory**`,
+			`**▸ ✊┇ ${client.data.prefix}rob**`,
+			`**▸ ${client.data.emotes.Money}┇ ${client.data.prefix}coin**`,
+			`**▸ 🐟┇ ${client.data.prefix}fish**`
 
 		]
 
 		let ArrayGestion = [
 
-			`**▸ 🏦┇ =dep**`,
-			`**▸ 📊┇ =top**`,
-			`**▸ 💰┇ =bal**`,
-			`**▸ 💳┇ =wd**`,
-			`**▸ 👛┇ =transfer**`,
-			`**▸ 🫂┇ =pay**`,
+			`**▸ 🏦┇ ${client.data.prefix}dep**`,
+			`**▸ 📊┇ ${client.data.prefix}top**`,
+			`**▸ 💰┇ ${client.data.prefix}bal**`,
+			`**▸ 💳┇ ${client.data.prefix}wd**`,
+			`**▸ 👛┇ ${client.data.prefix}transfer**`,
+			`**▸ 🫂┇ ${client.data.prefix}pay**`,
 
 		]
 
 		let ArrayDiamonds = [
 
-			`**▸ 💰┇ =itemsprice**`,
-			`**▸ 💳┇ =buyitem**`,
-			`**▸ 💵┇ =sellitem**`,
-			`**▸ 💸┇ =payitem**`
+			`**▸ 💰┇ ${client.data.prefix}itemsprice**`,
+			`**▸ 💳┇ ${client.data.prefix}buyitem**`,
+			`**▸ 💵┇ ${client.data.prefix}sellitem**`,
+			`**▸ 💸┇ ${client.data.prefix}payitem**`
 
 		]
 
 		let ArrayMercado = [
 
-			'**▸ ⚖️┇ =mercado**',
-			'**▸ 💴┇ =sellcolor**',
-			'**▸ 💶┇ =removecolor**',
-			'**▸ 💷┇ =buymercado**',
-			`**▸ 🤑┇ =buy**`,
-			`**▸ 🛍️┇ =shop**`,
-			`**▸ 🛒┇ =roles**`,
-			`**▸ 🚩┇ =use**`,
+			`**▸ ⚖️┇ ${client.data.prefix}mercado**`,
+			`**▸ 💴┇ ${client.data.prefix}sellcolor**`,
+			`**▸ 💶┇ ${client.data.prefix}removecolor**`,
+			`**▸ 💷┇ ${client.data.prefix}buymercado**`,
+			`**▸ 🤑┇ ${client.data.prefix}buy**`,
+			`**▸ 🛍️┇ ${client.data.prefix}shop**`,
+			`**▸ 🛒┇ ${client.data.prefix}roles**`,
+			`**▸ 🚩┇ ${client.data.prefix}use**`,
 		]
 
 		let Bank = client.data.emotes.Bank;

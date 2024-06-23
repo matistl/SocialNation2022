@@ -40,27 +40,27 @@ module.exports = {
 
 		let Embed1 = new Discord.MessageEmbed()
 			.setTitle(`▸	🛍️	┇	TIENDA`)
-			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(0, 5).join('\n')}\n\n**Para comprar un color usa** \`=buy <nombre>\`\n*Ejemplo:* \`=buy azul\``)
+			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(0, 5).join('\n')}\n\n**Para comprar un color usa** \`${client.data.prefix}buy <nombre>\`\n*Ejemplo:* \`${client.data.prefix}buy azul\``)
 			.setColor('6800FF')
 
 		let Embed2 = new Discord.MessageEmbed()
 			.setTitle(`▸	🛍️	┇	TIENDA`)
-			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(5, 10).join('\n')}\n\n**Para comprar un color usa** \`=buy <nombre>\`\n*Ejemplo:* \`=buy azul\``)
+			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(5, 10).join('\n')}\n\n**Para comprar un color usa** \`${client.data.prefix}buy <nombre>\`\n*Ejemplo:* \`${client.data.prefix}buy azul\``)
 			.setColor('6800FF')
 
 		let Embed3 = new Discord.MessageEmbed()
 			.setTitle(`▸	🛍️	┇	TIENDA`)
-			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(10, 15).join('\n')}\n\n**Para comprar un color usa** \`=buy <nombre>\`\n*Ejemplo:* \`=buy azul\``)
+			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(10, 15).join('\n')}\n\n**Para comprar un color usa** \`${client.data.prefix}buy <nombre>\`\n*Ejemplo:* \`${client.data.prefix}buy azul\``)
 			.setColor('6800FF')
 
 		let Embed4 = new Discord.MessageEmbed()
 			.setTitle(`▸	🛍️	┇	TIENDA`)
-			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(15, 20).join('\n')}\n\n**Para comprar un color usa** \`=buy <nombre>\`\n*Ejemplo:* \`=buy azul\``)
+			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(15, 20).join('\n')}\n\n**Para comprar un color usa** \`${client.data.prefix}buy <nombre>\`\n*Ejemplo:* \`${client.data.prefix}buy azul\``)
 			.setColor('6800FF')
 
 		let Embed5 = new Discord.MessageEmbed()
 			.setTitle(`▸	🛍️	┇	TIENDA`)
-			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(20, 22).join('\n')}\n\n**Para comprar un color usa** \`=buy <nombre>\`\n*Ejemplo:* \`=buy low exclusive\``)
+			.setDescription(`**Tu banco:  ${Bank} $${Banco ? Banco.banco : 0}**\n\n${Array.slice(20, 22).join('\n')}\n\n**Para comprar un color usa** \`${client.data.prefix}buy <nombre>\`\n*Ejemplo:* \`${client.data.prefix}buy low exclusive\``)
 			.setColor('6800FF')
 
 
@@ -107,7 +107,7 @@ module.exports = {
 			};
 
 			const curPage = await interaction.reply({
-				embeds: [pages[page].setFooter(`Página ${page + 1} / ${pages.length}`)],
+				embeds: [pages[page].setFooter({ text:`Página ${page + 1} / ${pages.length}` })],
 				components: [row],
 				fetchReply: true,
 			});
@@ -160,7 +160,7 @@ module.exports = {
 				await i.deferUpdate();
 				await i.editReply({
 
-					embeds: [pages[page].setFooter(`Página ${page + 1} / ${pages.length}`)],
+					embeds: [pages[page].setFooter({ text:`Página ${page + 1} / ${pages.length}` })],
 
 					components: [row],
 				});
@@ -171,7 +171,7 @@ module.exports = {
 
 			collector.on('end', () => {
 
-				if (!curPage.deleted) {
+				try {
 					const disabledRow = new Discord.MessageActionRow()
 						.addComponents(
 							buttonList[0].setDisabled(true),
@@ -179,10 +179,10 @@ module.exports = {
 						);
 
 					curPage.edit({
-						embeds: [pages[page].setFooter(`Página ${page + 1} / ${pages.length}`)],
+						embeds: [pages[page].setFooter({ text:`Página ${page + 1} / ${pages.length}` })],
 						components: [disabledRow],
 					});
-				}
+				} catch (e){}
 			});
 
 			return curPage;

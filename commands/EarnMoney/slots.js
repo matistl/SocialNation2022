@@ -29,7 +29,8 @@ module.exports = {
 		if (Random === 18) Random = 17;
 
 		let MS = ms('5m');
-
+		
+		/*
 		if (Cooldown && Cooldown.Slots.Tiempo && Cooldown.Slots.Tiempo && Date.now() < Cooldown.Slots.Tiempo) {
 
 			let Restante = pretty(Cooldown.Slots.Tiempo - Date.now(), { verbose: true, millisecondsDecimalDigits: 0, secondsDecimalDigits: 0 }).replace('hours', 'h').replace('minutes', 'm y').replace('seconds', 's').replace('hour ', 'h').replace('minute ', 'm')
@@ -38,6 +39,8 @@ module.exports = {
 
 		}
 
+		*/
+
 		if (!Cantidad) return SendError('Especifica una cantidad\npara apostar en slots.', message);
 
 		if (isNaN(Cantidad) || Cantidad.startsWith('.') || Cantidad.startsWith('-') || ['-', '.'].some(x => Cantidad.toLowerCase().includes(x))) return SendError('Especifica un\nnúmero válido', message);
@@ -45,12 +48,16 @@ module.exports = {
 		if (parseInt(Cantidad) > EconomyGet.monedero) return SendError('No tienes esa cantidad de dinero\nen tu monedero.', message);
 
 		if (parseInt(Cantidad) < 1) return SendError('Debes apostar una cantidad mayor.', message);
+		
+		if (parseInt(Cantidad) > 150000) return SendError(`No puedes apostar\nmás de ${client.data.emotes.Money} **$150,000**.`, message);
 
-		if (parseInt(Cantidad) > 5000) return SendError(`No puedes apostar\nmás de ${client.data.emotes.Money} **$5,000**.`, message);
-
+		/*
+		
 		Cooldown.Slots.Tiempo = Date.now() + MS
 
 		await Cooldown.save();
+
+		*/
 
 
 		if (Random <= 7) {
@@ -58,7 +65,7 @@ module.exports = {
 			Embed = new Discord.MessageEmbed()
 				.setTitle(`▸  ${Bank}┇  SLOTS`)
 				.setDescription(`🍉 ◼️ 🍇\n🍉 🍇 🍊\n ◼️ 🍇 🍉\n\nPerdiste ${client.data.emotes.Money} **$${parseInt(Cantidad).toLocaleString()}**`)
-				.setFooter(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+				.setFooter({ text: message.author.username,  iconURL: message.author.displayAvatarURL({ dynamic: true })})
 				.setColor('RED')
 
 			EconomyGet.monedero -= parseInt(Cantidad)
@@ -75,7 +82,7 @@ module.exports = {
 			Embed = new Discord.MessageEmbed()
 				.setTitle(`▸  ${Bank}┇  SLOTS`)
 				.setDescription(`🍉 ◼️ 🍉\n🍉 🍇 🍊\n 🍇 🍇 🍉\n\nGanaste ${client.data.emotes.Money} **$${(parseInt(Cantidad) * 2).toLocaleString()}**`)
-				.setFooter(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+				.setFooter({ text: message.author.username,  iconURL: message.author.displayAvatarURL({ dynamic: true })})
 				.setColor('6800FF')
 
 			EconomyGet.monedero += parseInt(Cantidad) * parseInt(2)
@@ -91,7 +98,7 @@ module.exports = {
 			Embed = new Discord.MessageEmbed()
 				.setTitle(`▸  ${Bank}┇  SLOTS`)
 				.setDescription(`🍊 🍊 🍊\n🍉 🍉 🍉\n 🍇 🍇 🍇\n\nGanaste ${client.data.emotes.Money} **$${(parseInt(Cantidad) * 3).toLocaleString()}**`)
-				.setFooter(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+				.setFooter({ text: message.author.username,  iconURL: message.author.displayAvatarURL({ dynamic: true })})
 				.setColor('6800FF')
 
 			EconomyGet.monedero += parseInt(Cantidad) * parseInt(3)

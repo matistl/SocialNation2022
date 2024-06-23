@@ -206,7 +206,7 @@ module.exports = {
 
 		async function Buy(color) {
 
-			if (EconomyGetDB.monedero < color.price) return SendError('No tienes suficiente dinero en el monedero\npara comprar ese color.', message);
+			if (EconomyGet.monedero < color.price) return SendError('No tienes suficiente dinero en el monedero\npara comprar ese color.', message);
 
 			SendEmbed('BUY ROL', `Compraste el rol <@&${color.id}>\ny se te restan ${MONEY} **$${color.price.toLocaleString()}** del monedero.\nPara equipar el color usa \`=use <color>\``, message);
 
@@ -214,7 +214,7 @@ module.exports = {
 
 			await EconomyRoles.save();
 
-			await EconomyGetDB.save();
+			await EconomyGet.save();
 
 		}
 

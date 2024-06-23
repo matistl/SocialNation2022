@@ -11,7 +11,7 @@ module.exports = {
 	run: async (client, message, args) => {
 
 
-		let Random = Math.floor(Math.random() * (501 - 100)) + 100;
+		let Random = Math.floor(Math.random() * (5001 - 1500)) + 1500;
 
 		let EconomyGet = await ModelEconomy.findOne({ guild: message.guild.id, user: message.author.id });
 

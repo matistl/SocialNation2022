@@ -16,6 +16,7 @@ module.exports = async (client, message) => {
 	let args = message.content.slice(prefix.length).trim().split(/ +/g);
 	let command = args.shift().toLowerCase();
 
+
 	if (message.channel.type === 'dm') return;
 
 	let cmd = client.commands.get(command);

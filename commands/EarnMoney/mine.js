@@ -11,7 +11,7 @@ module.exports = {
     run: async (client, message, args) => {
 
 
-        let Random = parseInt(Math.floor(Math.random() * 3000));
+        let Random = parseInt(Math.floor(Math.random() * 10000));
 
         let Probabilidad = parseInt(Math.floor(Math.random() * 6));
 

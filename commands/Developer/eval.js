@@ -11,10 +11,6 @@ module.exports = {
 
         let code = args.join(' ');
 
-        let msg = message;
-
-        let bot = client;
-
         if (!client.data.dev.includes(message.author.id)) return;
 
         if (!code) return;

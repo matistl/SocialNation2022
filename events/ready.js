@@ -1,5 +1,3 @@
-const Mongoose = require('mongoose');
-
 module.exports = async (client) => {
 
     client.user.setActivity('Developed by xUnknown#4004', { type: "WATCHING" })

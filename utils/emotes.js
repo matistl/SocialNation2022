@@ -4,7 +4,7 @@ module.exports = {
         MineralDiamante: '<:Diamond:922549336733257758>',
         MineralCarbon: '<:Carbon:929221383932755988>',
         MineralOro: '<:Oro:929229505854308352>',
-        MineralCuarzo: '<:Cuarzo:929222382240030780>',
+        MineralCuarzo: '<:Cuarzo:930581921849802773>',
         MineralAmatista: '<:Amatista:929222661278662686>',
         MineralRuby: '<:Ruby:929227736667529297>',
         MineralEsmeralda: '<:Esmeralda:929223030067036170>',

@@ -1,5 +1,3 @@
-const Discord = require('discord.js');
-const ModelEconomy = require('../../models/Economy_DB.js');
 const SendError = require('../../utils/error.js');
 const SendEmbed = require('../../utils/embed.js');
 const ModelRoles = require('../../models/Economy_Roles.js');
@@ -49,13 +47,13 @@ module.exports = {
 
 			if (color.toLowerCase() !== Color.toLowerCase()) {
 
-				if (message.member.roles.cache.has(config[color].id)) await message.member.roles.remove(config[color].id).catch((err) => console.log(err))
+				if (message.member.roles.cache.has(config.ROLE[color].id)) await message.member.roles.remove(config.ROLES[color].id).catch((err) => console.log(err))
 
 			}
 
 			if (color.toLowerCase() === Color.toLowerCase()) {
 
-				await message.member.roles.add(config[color].id).catch((err) => console.log(err));
+				await message.member.roles.add(config.ROLES[color].id).catch((err) => console.log(err));
 
 			}
 
